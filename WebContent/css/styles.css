@@ -1,0 +1,36 @@
+body{
+    margin-top: 50px;
+}
+
+.loadmore{
+    float: right;
+    margin-bottom: 2%;
+}
+
+.photos{
+    margin-bottom: 3%;
+}
+
+.id{
+    display:none;
+}
+
+.photo-div{
+    margin-top: 3%;
+}
+
+.searchbar{
+    margin-top: 80px;
+}
+
+.pagedesc{
+    line-height: 200%;
+}
+
+.login{
+    float: right;
+}
+
+.dropdown-menu{
+    padding: 1%;
+}

@@ -1,0 +1,65 @@
+<html>
+<head>
+     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js" ></script>
+    
+    
+    </head>
+<body>
+    <div id = "datas"></div>
+    
+    
+    
+    <div id = "return">Return</div>
+</body>
+<script>
+    var id = window.location.search.substring(1).split("=")[1];
+    var path = "https://jsonplaceholder.typicode.com/photos?id=" + id;
+    console.log(id);
+    $.get(path,function(obj){
+        var jason = obj[0];
+        var title = ($("<div> Title: " + jason.title + "</div>"));
+        var image = ($("<img src = '" + jason.url + "'>"));
+        var uploader = ($("<div> Uploader: jonnski </div>"));
+        var desc = ($("<div> Desc: lorem ipsum ayy lmao how to latin </div>"));
+        var tags = ($("<div id = 'tags'>Tags: </div>"));
+        var tagBox = ($("<input type = 'text' id = 'tagbox'>"));
+        var tagBtn = ($("<button id = 'buttonTag'>Add Tag</button>"));
+        
+        var shareBox = ($("<input type = 'text' id = 'sharebox'> "));
+        var shareBtn = ($("<button id = 'shareBtn'>share</button>"));
+        $("#datas").append(title);
+        $("#datas").append(image);
+        $("#datas").append(uploader);
+        $("#datas").append(desc);
+        $("#datas").append(tags);
+        $("#datas").append(tagBox);
+        $("#datas").append(tagBtn);
+        $("#datas").append(shareBox);
+        $("#datas").append(shareBtn);
+        
+    });
+    $("#return").click(function(){
+        window.open("index.html");
+        window.close();
+        
+    });
+    $(document).on('click', '#buttonTag', function(){
+         var str = document.getElementById("tagbox").value;
+        console.log(str);
+         var newDiv = ($("<div>"+ str +"</div>"));
+         $("#tags").append(newDiv);
+    });
+    $(document).on('click', '#shareBtn', function(){
+         var str = document.getElementById("sharebox");
+         str.value = "";
+    });
+    
+    
+    
+</script>
+
+
+
+
+
+</html>
